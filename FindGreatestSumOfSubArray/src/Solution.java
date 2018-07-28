@@ -1,11 +1,38 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Solution {
-    public int FindGreatestSumOfSubArray(int[] array) {
-        int  max = array[0];
-        int res = array[0];
-        for (int i = 1; i < array.length; i++) {
-            max = Math.max(max,max+array[i]);
-            res = Math.max(res,max);
+    public String PrintMinNumber(int[] numbers) {
+        int n;
+        String s = "";
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        n = numbers.length;
+        for (int i = 0; i < n; i++) {
+            list.add(numbers[i]);
+
         }
-        return max;
+        System.out.println(list);
+            Collections.sort(list, new Comparator<Integer>() {
+
+            public int compare(Integer str1, Integer str2) {
+                String s1 = str1 + "" + str2;
+                String s2 = str2 + "" + str1;
+                return s1.compareTo(s2);
+            }
+        });
+        System.out.println(list);
+        for (int j : list) {
+            s += j;
+        }
+        return s;
+
+    }
+
+    public static void main(String[] args) {
+        int[] input = {3,5,1,4,2};
+        Solution solution = new Solution();
+        String res = solution.PrintMinNumber(input);
+        System.out.println(res);
     }
 }
