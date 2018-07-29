@@ -16,8 +16,6 @@ public class Solution {
 
         }
         else{
-            if(stack1.empty())
-                System.out.println("error");
             while(!stack1.empty()){
                 stack2.push(stack1.peek());
                 stack1.pop();
