@@ -25,7 +25,7 @@ public class Solution {
                 stack.add(node);
                 node = node.left;
             }
-            while(!stack.isEmpty()){
+            if(!stack.isEmpty()){
                 node = stack.pop();
                 System.out.println(node.val);
                 node = node.right;
